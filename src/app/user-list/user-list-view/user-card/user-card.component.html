@@ -1,0 +1,19 @@
+
+@if(user){
+	<b>User:</b>{{user.firstName}} {{user.lastName}} 
+	<p>
+		{{user.age}} {{user.gender}} {{ user.activated ? 'activated' : 'deactivated' }}
+		<br/>
+		<button mat-stroked-button
+			(click)="onActivatedClick()">
+			{{ user.activated ? 'Deactivate' : 'Activate' }}
+		</button>
+		<button
+			(click)="onDeleteClick()">
+			Delete
+		</button>
+	</p>
+}
+@else{
+	<p>User not found</p>
+}
